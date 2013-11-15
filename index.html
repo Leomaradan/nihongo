@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<!-- <html manifest="cache.php">-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Minna no Nihongo</title>
+        <meta name="description" content="Minna no Nihongo Dai Repetor">
+
+		<!-- IOS icon -->
+		<link rel="apple-touch-icon" sizes="57x57" href="touch/apple-touch-icon-57x57.png" />
+		<link rel="apple-touch-icon" sizes="114x114" href="touch/apple-touch-icon-114x114.png" />
+		<link rel="apple-touch-icon" sizes="72x72" href="touch/apple-touch-icon-72x72.png" />
+		<link rel="apple-touch-icon" sizes="144x144" href="touch/apple-touch-icon-144x144.png" />
+		<link rel="apple-touch-icon" sizes="60x60" href="touch/apple-touch-icon-60x60.png" />
+		<link rel="apple-touch-icon" sizes="120x120" href="touch/apple-touch-icon-120x120.png" />
+		<link rel="apple-touch-icon" sizes="76x76" href="touch/apple-touch-icon-76x76.png" />
+		<link rel="apple-touch-icon" sizes="152x152" href="touch/apple-touch-icon-152x152.png" />
+
+		<!-- Android icon -->
+		<link rel="icon" type="image/png" href="touch/favicon-16x16.png" sizes="16x16" />
+		<link rel="icon" type="image/png" href="touch/favicon-32x32.png" sizes="32x32" />
+		<link rel="icon" type="image/png" href="touch/favicon-96x96.png" sizes="96x96" />
+		<link rel="icon" type="image/png" href="touch/favicon-160x160.png" sizes="160x160" />
+
+		<!-- W8 icon -->
+		<meta name="msapplication-TileColor" content="#e80000" />
+		<meta name="msapplication-TileImage" content="touch/mstile-144x144.png" />
+		<meta name="msapplication-square70x70logo" content="touch/mstile-70x70.png" />
+		<meta name="msapplication-square150x150logo" content="touch/mstile-150x150.png" />
+		<meta name="msapplication-wide310x150logo" content="touch/mstile-310x150.png" />
+		<meta name="msapplication-square310x310logo" content="touch/mstile-310x310.png" />
+
+		<!-- iPhone -->
+		<link rel="apple-touch-startup-image" media="(device-width: 320px)" href="touch/apple-touch-startup-image-320x460.png">
+		<!-- iPhone (Retina) -->
+		<link rel="apple-touch-startup-image" media="(device-width: 320px) and (-webkit-device-pixel-ratio: 2)" href="touch/apple-touch-startup-image-640x920.png">
+
+		<!-- iPad (portrait) -->
+		<link rel="apple-touch-startup-image" media="(device-width: 768px) and (orientation: portrait)" href="touch/apple-touch-startup-image-768x1004.png">
+		<!-- iPad (landscape) -->
+		<link rel="apple-touch-startup-image" media="(device-width: 768px) and (orientation: landscape)" href="touch/apple-touch-startup-image-748x1024.png">
+		<!-- iPad (Retina, portrait) -->
+		<link rel="apple-touch-startup-image" media="(device-width: 768px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" href="touch/apple-touch-startup-image-1536x2008.png">
+		<!-- iPad (Retina, landscape) -->
+		<link rel="apple-touch-startup-image" media="(device-width: 768px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" href="touch/apple-touch-startup-image-1496x2048.png">
+
+        <!-- Apple meta -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bas-style" content="black-translucent">
+
+
+        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="css/main.css" rel="stylesheet" media="screen">
+	    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	    <!--[if lt IE 9]>
+	      <script src="js/lib/html5.js"></script>
+	    <![endif]-->        
+
+    </head>
+    <body>
+
+    	<div class="container" id="wrapper">
+			<header id="flag">
+				<h1>みんなの日本語</h1>
+			</header>
+
+			
+			<section id="loading"></section>
+			<script type="text/javascript">
+			<!--
+				document.getElementById("loading").innerHTML = "Loading...";
+			-->
+			</script>
+			<noscript>Javascript must be enabled to use this application!</noscript>
+		
+			<section id="main" role="main" class="hidden">
+				<section id="quiz" class="hidden">
+					<div class="row">
+						<div id="counter" class="col-md-4 alert alert-info"></div>
+						<div id="message" class="col-md-5"></div>
+						<div id="chrono" class="col-md-3">&nbsp;</div>
+					</div>
+					<div class="row">
+						<h1><span id="question" class="col-md-6 col-md-offset-3 text-center"></span></h1>
+					</div>
+					<div class="row">			
+						<div id="answerInput">
+							<input id="answer_input" class="hidden">
+							<button id="send_input"  class="hidden"></button>
+						</div>
+						<div id="answersChoice" class="col-md-offset-1 col-md-10">
+							<button id="answer1" class="hidden btn btn-default btn-lg btn-block"></button>
+							<button id="answer2" class="hidden btn btn-default btn-lg btn-block"></button>
+							<button id="answer3" class="hidden btn btn-default btn-lg btn-block"></button>
+							<button id="answer4" class="hidden btn btn-default btn-lg btn-block"></button>
+							<button id="answer5" class="hidden btn btn-default btn-lg btn-block"></button>
+						</div>
+					</div>	
+				</section>
+
+				<section id="result" class="hidden">
+				</section>
+
+				<section id="configurator">
+					<div class="form-group">
+						<label for="dai_selector" class="translate">dai_select</label>
+						<select id="dai_selector" class="form-control"></select>
+					</div>
+					<div class="form-group">
+						<label for="question_type" class="translate">type_select_question</label>
+						<select id="question_type" class="form-control">
+							<option value="furansugo" class="translate">option_furansugo</option>
+							<option value="roumaji" class="translate" selected>option_roumaji</option>
+							<option value="kana" class="translate">option_hiragana</option>
+							<option value="kanji" class="translate">option_kanji</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="answere_type" class="translate">type_select_answere</label>
+						<select id="answere_type" class="form-control">				
+							<option value="furansugo" class="translate" selected>option_furansugo</option>
+							<option value="roumaji" class="translate">option_roumaji</option>
+							<option value="kana" class="translate">option_hiragana</option>
+							<option value="kanji" class="translate">option_kanji</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="nbofanswere" class="translate">number_of_answere</label>
+						<input id="nbofanswere" class="form-control" type="range" min="2" max="5" value="3">	
+						<span id="showvalue">3</span>		
+					</div>
+					<button type="button" id="start" class="btn btn-primary translate">start_quiz</button>
+				</section>
+				
+					
+			</section>
+
+			<div id="nofullscreen" class="hidden translate alert alert-warning">add_fullscreen</div>
+
+			<!--<nav class="navbar navbar-fixed-bottom navbar-default" role="navigation">
+				<div class="navbar-header"></div>
+				<div class="collapse navbar-collapse">
+						<button type="button" class="btn btn-default navbar-btn"></span><img src="img/edit-document.png"><span class="hidden-xs translate">quiz</span></button>
+						<button type="button" class="btn btn-default navbar-btn"></span><img src="img/statistics-chart.png"><span class="hidden-xs translate">stats</span></button>
+						<button type="button" class="btn btn-default navbar-btn"></span><img src="img/settings.png"><span class="hidden-xs translate">cfg</span></button>
+				</div>
+			</nav>-->
+
+			<footer>
+				
+			</footer>
+		</div>
+
+		<script type="text/javascript" src="js/dai.js"></script>
+		<script type="text/javascript" src="js/dai/dai1ka.js"></script>
+		<script type="text/javascript" src="js/localization/fr.js"></script>
+		<script type="text/javascript" src="js/main.js?v=1"></script>
+			<script type="text/javascript">
+			<!--
+				
+			-->
+			</script>		
+    </body>
+</html>

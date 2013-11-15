@@ -1,0 +1,15 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+	Léo Maradan - Main developper
+
+# THANKS
+
+    (to be completed)
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3
+    Bootstrap (css only)
